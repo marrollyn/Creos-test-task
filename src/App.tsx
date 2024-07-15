@@ -2,9 +2,13 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import {getDesignerApi} from './components/Api/api'
 
 function App() {
   const [count, setCount] = useState(0);
+
+  getDesignerApi()
+    .then(data => {console.log(data)});
 
   return (
     <>

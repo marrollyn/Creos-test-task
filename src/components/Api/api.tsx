@@ -46,6 +46,7 @@ export const getDesignerApi = () => {
     return res.json();
     })
     .then((res) => console.log(res));
+    
 }
 //getDesignerApi();
 
