@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
-import designerReducer from '../slice/desinersSlice';
+//import designerReducer from '../slice/desinersSlice';
+import {commentReducer} from '../slice/commentSlice';
 
 export const store = configureStore({
     reducer: {
-    designer: designerReducer,
+    // designer: designerReducer,
+    comment: commentReducer,
     },
 });
 

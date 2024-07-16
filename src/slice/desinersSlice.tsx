@@ -1,25 +1,43 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { DesignerList } from "../types/index.tsx";
 import { getDesignerApi } from "../components/Api/api.tsx";
 import { Dispatch } from 'redux';
 import { RootState, AppDispatch } from "../store/store.tsx";
+
 
 // interface initialState {
 //     DesignerList;
 // }
 
 const designerListApi = getDesignerApi()
-  .then((data) => {
+    .then((data) => {
     console.log(data);
     return data;
-  })
-  .catch((error) => {
+    })
+    .catch((error) => {
     console.error("Произошла ошибка при получении данных:", error);
-  });
+    });
 
-const initialState = {
-  designerListApi,
-};
+const initialState:DesignerList = {
+    count: 0,
+    next: '',
+    previous: null,
+    results: [{
+        avatar: '',
+        username: '',
+        thumbnails: {
+            avatar: '',
+            avatar_2x: '',
+            avatar_webp: '',
+            avatar_webp_2x: '',
+        },
+        issues: [{
+            key: '',
+            date_created: '',
+            status: '', //"Done" | "In Progress";
+        }]
+}]
+}
 
 // const designerListSlice = createSlice({
 //     name: 'designerList',
@@ -52,24 +70,14 @@ const initialState = {
 export const designerSlice = createSlice({
     name: "designer",
     initialState: {
-        data: null,
-        loading: false,
-        error: null,
+
     },
     reducers: {
-        setData: (state, action) => {
-            state.data = action.payload;
-    },
-        setLoading: (state, action) => {
-            state.loading = action.payload;
-    },
-        setError: (state, action) => {
-            state.error = action.payload;
-    },
+        
     },
 });
 
-export const { setData, setLoading, setError } = designerSlice.actions;
+//export const { setData, setLoading, setError } = designerSlice.actions;
 
 export default designerSlice.reducer;
 
@@ -88,20 +96,20 @@ export default designerSlice.reducer;
 //     dispatch(setLoading(false));
 //     };
 
-export const fetchDataFromServer = (dispatch: Dispatch) => {
-    dispatch(setLoading(true));
+// export const fetchDataFromServer = (dispatch: Dispatch) => {
+//     dispatch(setLoading(true));
 
-    getDesignerApi()
-        .then((data) => {
-            dispatch(setData(data));
-        })
-        .catch((error) => {
-            dispatch(setError(error.message));
-        })
-        .finally(() => {
-            dispatch(setLoading(false));
-        });
-};
+//     getDesignerApi()
+//         .then((data) => {
+//             dispatch(setData(data));
+//         })
+//         .catch((error) => {
+//             dispatch(setError(error.message));
+//         })
+//         .finally(() => {
+//             dispatch(setLoading(false));
+//         });
+// };
 
 // export const fetchDataFromServer = () => async (dispatch: AppDispatch, getState: () => RootState) => {
 //     dispatch(setLoading(true));

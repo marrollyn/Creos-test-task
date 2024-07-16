@@ -15,7 +15,7 @@ export type DesignerItem = {
 export type DesignerList = {
     count: number;
     next: string;
-    previous: null;
+    previous: null | string;
     results: {
         avatar: string;
         username: string;
@@ -39,6 +39,7 @@ export type CommentList = {
 	issue: string;
 	designer: DesignerItem;
 	date_created: string;
+    message: string;
 }
 
 export type IssueItem = {
