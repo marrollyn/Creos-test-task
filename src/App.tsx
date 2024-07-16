@@ -5,6 +5,7 @@ import './App.css'
 //import {getDesignerApi} from './components/Api/api'
 import Header from './components/Header/Header.tsx'
 import {CommentList} from './components/Main/CommentsList/CommentList.tsx'
+import {IssueList} from './components/Main/IssueList/IssueList.tsx'
 import {
   Routes,
   Route,
@@ -26,7 +27,8 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
+      {/* <h1>Vite + React</h1> */}
+      <Header/>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
@@ -46,9 +48,13 @@ function App() {
       <h3>
       <Link to='/commentList/'>Список комментариев</Link>
       </h3>
+      <h3>
+      <Link to='/issueList/'>Статистика задач</Link>
+      </h3>
       <Routes>
       <Route path='/' element={<Header/>} />
         <Route path='/commentList/' element={<CommentList />} />
+        <Route path='/issueList/' element={<IssueList />} />
       </Routes>
     </>
   )

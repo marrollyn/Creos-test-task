@@ -32,7 +32,6 @@ const initialState:TInitialState = {
     error: null,
 }
 
-
 const commentListSlice = createSlice({
     name: 'comment',
     initialState,
@@ -68,7 +67,6 @@ export const fetchComments = createAsyncThunk(
     async () => getСommentApi()
     //return response.data; // 
     );
-
 
 
 export const commentReducer = commentListSlice.reducer;

@@ -28,7 +28,7 @@ export const getIssueApi = () => {
         }
     return res.json();
     })
-    .then((res) => console.log(res));
+    // .then((res) => console.log(res));
 }
 //getIssueApi ();
 
