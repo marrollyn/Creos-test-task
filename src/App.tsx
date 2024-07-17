@@ -9,7 +9,8 @@ import {IssueList} from './components/Main/IssueList/IssueList.tsx'
 import {
   Routes,
   Route,
-  Link
+  Link,
+  NavLink
 } from 'react-router-dom';
 
 
@@ -43,13 +44,13 @@ function App() {
       
       {/* <Header/> */}
       <h3>
-      <Link to='/'>Главная страница</Link>
+      <NavLink to='/'>Главная страница</NavLink>
       </h3>
       <h3>
-      <Link to='/commentList/'>Список комментариев</Link>
+      <NavLink to='/commentList/'>Список комментариев</NavLink>
       </h3>
       <h3>
-      <Link to='/issueList/'>Статистика задач</Link>
+      <NavLink to='/issueList/'>Статистика задач</NavLink>
       </h3>
       <Routes>
       <Route path='/' element={<Header/>} />
