@@ -1,0 +1,22 @@
+.issue_pie__container {
+    display: flex;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    margin-block-start: 20px;
+}
+
+@media (min-width: 768px) {
+    .issue_pie__label {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    .issue_pie__container {
+        margin-block-start: 30px;
+    }
+}

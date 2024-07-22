@@ -1,13 +1,13 @@
-import { configureStore } from '@reduxjs/toolkit';
-//import designerReducer from '../slice/desinersSlice';
-import {commentReducer} from '../slice/commentSlice';
-import {issueReducer} from '../slice/issueSlice';
+import { configureStore } from "@reduxjs/toolkit";
+import { commentReducer } from "../slice/commentSlice";
+import { issueReducer } from "../slice/issueSlice";
+import { designerReducer } from "../slice/desinerSlice";
 
 export const store = configureStore({
     reducer: {
-    // designer: designerReducer,
-    comment: commentReducer,
-    issue: issueReducer,
+        comment: commentReducer,
+        issue: issueReducer,
+        designer: designerReducer,
     },
 });
 

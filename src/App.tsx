@@ -1,64 +1,91 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-//import {getDesignerApi} from './components/Api/api'
-import Header from './components/Header/Header.tsx'
-import {CommentList} from './components/Main/CommentsList/CommentList.tsx'
-import {IssueList} from './components/Main/IssueList/IssueList.tsx'
-import {
-  Routes,
-  Route,
-  Link,
-  NavLink
-} from 'react-router-dom';
-
-
+import { useState, useEffect } from "react";
+// import "./App.css";
+import { IssueList } from "./components/IssueList/IssueList.tsx";
+import { DesignersList } from "./components/DesignersTableList/DesignersTableList.tsx";
+import { Routes, Route, NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { HomePage } from "./components/HomePage/HomePage.tsx";
+import style from "./App.module.css";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = (language: string) => {
+    i18n.changeLanguage(language);
+  };
+
+  const [theme, setTheme] = useState("");
+
+  useEffect(() => {
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      setTheme("dark");
+      localStorage.setItem("theme", "dark");
+    } else if (window.matchMedia("(prefers-color-scheme: light)").matches) {
+      setTheme("light");
+      localStorage.setItem("theme", "light");
+    }
+  }, []);
+
+  function toggleDaerkTheme() {
+    setTheme("dark");
+    localStorage.setItem("theme", "dark");
+  }
+
+  function toggleLightTheme() {
+    setTheme("light");
+    localStorage.setItem("theme", "light");
+  }
+
+  function getWeekNumber() {
+    const currentDate = new Date();
+    const currentYear = new Date(currentDate.getFullYear(), 0, 0);
+    const currentWorkWeek = Math.floor(
+      (currentDate.valueOf() - currentYear.valueOf() - 10 * 60 * 60 * 1000) /
+      (1000 * 60 * 60 * 24 * 7) +
+      1
+    );
+    return currentWorkWeek;
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      {/* <h1>Vite + React</h1> */}
-      <Header/>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+    <div id={theme} className={style.container}>
+      <h1 className={style.title}>{t("title")}</h1> <hr />
+      <hr />
+      <div className={style.buttons}>
+        <button className={style.button} onClick={() => toggleDaerkTheme()}>
+          {t("Header.theme_button_dark")}
         </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+        <button onClick={() => toggleLightTheme()}>
+          {t("Header.theme_button_light")}
+        </button>
+        <button onClick={() => changeLanguage("en")}>EN</button>
+        <button onClick={() => changeLanguage("ru")}>RU</button>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-      
-      {/* <Header/> */}
-      <h3>
-      <NavLink to='/'>Главная страница</NavLink>
-      </h3>
-      <h3>
-      <NavLink to='/commentList/'>Список комментариев</NavLink>
-      </h3>
-      <h3>
-      <NavLink to='/issueList/'>Статистика задач</NavLink>
-      </h3>
+      <hr />
+      <h4 className={style.week}>
+        {t("Header.weeks")} {getWeekNumber()}
+      </h4>
+      <hr />
+      <div className={style.description}>
+        <p>{t("description.part1")}</p>
+        <p>{t("description.part2")}</p>
+        <p>{t("description.part3")}</p>
+      </div>
+      <hr />
+      <div className={style.links}>
+        <NavLink to="/">{t("Header.home_page_link")}</NavLink>
+        <NavLink to="/designerList/">{t("Header.designers_list_link")}</NavLink>
+        <NavLink to="/issueList/">{t("Header.issues_link")}</NavLink>
+      </div>
+      <hr />
+      <hr />
       <Routes>
-      <Route path='/' element={<Header/>} />
-        <Route path='/commentList/' element={<CommentList />} />
-        <Route path='/issueList/' element={<IssueList />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/issueList/" element={<IssueList />} />
+        <Route path="/designerList/" element={<DesignersList />} />
       </Routes>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;

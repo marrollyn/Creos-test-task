@@ -1,0 +1,93 @@
+.header {
+    text-align: center;
+    margin-block-start: 20px;
+    margin-block-end: 20px;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+/* Основной стиль таблицы */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Стиль заголовков таблицы */
+.table th {
+    background-color: #acacac;
+    color: #333;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 5px;
+}
+
+/* Стиль ячеек таблицы */
+.table td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Стиль четных строк таблицы */
+.table tr:nth-child(even) {
+    background-color: #e6e6e6;
+    color: #333;
+}
+
+/* Стиль наведения на строку таблицы */
+.table tr:hover {
+    background-color: #c1bebe;
+}
+
+.selector {
+    block-size: 22px;
+    border-radius: 10px;
+    inline-size: 150px;
+    font-size: clamp(1rem, 0.9511rem + 0.2174vw, 1.125rem);
+    align-self: center;
+}
+
+.pagination button {
+    height: 30px;
+    padding: 0;
+}
+
+.pagination {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+    text-align: center;
+    margin-block-start: 10px;
+}
+
+@media (min-width: 768px) {
+    .pagination {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .selector {
+        align-self: center;
+    }
+
+    .pagination button {
+        width: 45px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .avatar {
+        width: 70px;
+        height: 70px;
+    }
+
+    .avatar {
+        width: 90px;
+        height: 90px;
+    }
+}

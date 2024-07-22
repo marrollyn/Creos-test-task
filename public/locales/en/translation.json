@@ -1,0 +1,57 @@
+{
+    "title": "Mini CRM for CREOS Play",
+    "description": {
+        "part1": "CREOS Play test assignment for the position of Junior frontend developer.",
+        "part2": "Using the buttons, you can switch the language between English and Russian, as well as light and dark themes.",
+        "part3": "On the relevant pages of the application, you can see some information about projects and employees."
+    },
+    "IssuePie": {
+        "header": "The ratio of task statuses",
+        "done": "Done",
+        "inProgress": "In progress",
+        "new": "New"
+    },
+    "IssueChart": {
+        "chooseWeeks": "How many previous weeks to display?",
+        "header": "The ratio of income and expenses",
+        "cost": "Received",
+        "expenses": "Expenses",
+        "profit": "Profit"
+    },
+    "Header": {
+        "weeks": "Week Number: ",
+        "theme_button_dark": "dark",
+        "theme_button_light": "light",
+        "home_page_link": "Home page",
+        "designers_list_link": "designers list",
+        "issues_link": "issues info"
+    },
+    "Designers": {
+        "header": "Designers info",
+        "avatar": "avatar",
+        "username": "username",
+        "email": "email",
+        "done": "done",
+        "in_progress": "in progress", 
+        "issues": "issues",
+        "search": "Search",
+        "page": "Page",
+        "of": "of",
+        "go_to_page": "Go to page: ",
+        "show": "Show",
+        "rows": "rows" 
+    },
+    "HomePage": {
+        "top_designers": "Top 10 Designers",
+        "last_comments": "Last 10 comments",
+        "posted": "Posted",
+        "days": "D",
+        "hours": "H",
+        "minutes": "Min",
+        "ago": "ago",
+        "task": "Issue",
+        "count": "Count",
+        "median": "Median time",
+        "name": "Name"
+    }
+}
