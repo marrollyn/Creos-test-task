@@ -33,7 +33,7 @@ declare module "@tanstack/react-table" {
 }
 
 export function DesignersList() {
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
     const dispatch = useDispatch<AppDispatch>();
     const [isLoading, setIsLoading] = useState(true);
     const nextPage = useSelector(getNextPage);

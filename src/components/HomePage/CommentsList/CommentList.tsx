@@ -9,7 +9,7 @@ import styles from './CommentList.module.css';
 import { useTranslation } from "react-i18next";
 
 export function CommentList() {
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
     const dispatch = useDispatch<AppDispatch>();
     const comments = useSelector(getCommentsSelector);
 

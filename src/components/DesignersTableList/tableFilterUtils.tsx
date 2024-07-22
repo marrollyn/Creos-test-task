@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 
 
 export function Filter({ column }: { column: Column<any, unknown> }) {
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
     const columnFilterValue = column.getFilterValue();
     const { filterVariant } = column.columnDef.meta ?? {};
 

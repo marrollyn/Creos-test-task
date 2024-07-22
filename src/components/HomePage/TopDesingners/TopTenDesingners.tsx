@@ -12,7 +12,7 @@ import style from "./TopTenDesigners.module.css";
 import { useTranslation } from "react-i18next";
 
 export function TopTenDesigners() {
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
 
     const designers = useSelector(getDesignersSelector);
 
