@@ -1,30 +1,43 @@
-# React + TypeScript + Vite
+# Mini CRM for CREOS Play
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Тестовое задание CREOS Play на позицию Junior frontend разработчик, выполнено на React & TypeScript (Vite).
 
-Currently, two official plugins are available:
+## Содержание
+1. [Установка и запуск](#Установка_и_запуск)
+2. [Участники](#Сборка)
+3. [Описание](#Описание)
+4. [Использованные инструменты](#Использованные_инструменты)
+5. [Исполнитель](#Исполнитель)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Установка и запуска<a name="Установка_и_запуск"></a> 
+Для установки и запуска проекта необходимо выполнить команды:
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```
+npm install
+npm run dev
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Сборка<a name="Сборка"></a>
+
+```
+npm run build
+```
+
+## Описание<a name="Описание"></a>
+Проект представляет собой мини CRM систему, сделанную на основании ТЗ и данных, получаемых по API, является SPA.
+Содержит три страницы (главную, страницу с информацией о дизайнерах и страницу с информацией о задачах):
+- главная страница содержит список топ-10 дизайнеров, отсортированный по количеству закрытых задач и медиане скорости выполнения задачи, также на главной странице отображается список последних десяти комментариев; 
+- страница с дизайнерами отображает сводную информацию о дизайнерах, содержащую сводные данные о каждом сотруднике (количество выполненных и взятых в работу задач, список задач), представленную в табличной форме с возможностью сортировки по столбцам и поиска по имени и адресу электронной почты пользователя;
+- страница с информацией о задачах содержит графическое отображение соотношений доходов и расходов (по неделям) и статусов задач;  
+
+## Использованные инструменты<a name="Использованные_инструменты"></a>
+Приложение разработано с использованием следующих библиотек:
+ - Redux - для получения данных и формирования хранилища данных для работы приложения;
+ - React Table – для отображения данных о сотрудниках в табличной форме;
+ - Recharts - для представления данных о доходах и расходах в графическом виде (гистограмма);
+ - Victory - для представления данных о выполнении задач в графическом виде (круговая диаграмма);
+ - react-i18next – для поддержи мультиязычности приложения;
+
+## Исполнитель<a name="Исполнитель"></a>
+Исполнитель - [marrollyn](https://github.com/marrollyn/)
+Контакты: [telegram](https://t.me/mforpeake)
