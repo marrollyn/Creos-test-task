@@ -39,7 +39,8 @@
         "of": "of",
         "go_to_page": "Go to page: ",
         "show": "Show",
-        "rows": "rows" 
+        "rows": "rows",
+        "loading": "Loading"  
     },
     "HomePage": {
         "top_designers": "Top 10 Designers",

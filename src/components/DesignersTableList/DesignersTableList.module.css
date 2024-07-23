@@ -42,6 +42,10 @@
     background-color: #c1bebe;
 }
 
+.table th:last-child {
+    min-width: 200px;
+}
+
 .selector {
     block-size: 22px;
     border-radius: 10px;

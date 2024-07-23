@@ -182,7 +182,7 @@ export function DesignersList() {
     return (
         <section>
             {isLoading ? (
-                <h2 className={style.header}>Загрузка...</h2>
+                <h2 className={style.header}>{t("Designers.loading")}...</h2>
             ) : (
                 <div>
                     <h3 className={style.header}>{t("Designers.header")}</h3>
