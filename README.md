@@ -39,5 +39,5 @@ npm run build
  - react-i18next – для поддержи мультиязычности приложения;
 
 ## Исполнитель<a name="Исполнитель"></a>
-Исполнитель - [marrollyn](https://github.com/marrollyn/)
-Контакты: [telegram](https://t.me/mforpeake)
+Исполнитель - [marrollyn](https://github.com/marrollyn/).
+Контакты: [telegram](https://t.me/mforpeake).
