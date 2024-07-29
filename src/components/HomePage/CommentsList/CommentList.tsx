@@ -19,7 +19,7 @@ export function CommentList() {
         }
     }, []);
 
-    const commentsShow = comments.slice(-10);
+    const commentsShow = comments.slice(0, 10);
 
     function getTime(date: string) {
         const currentDateTime = new Date();

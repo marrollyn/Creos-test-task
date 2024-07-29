@@ -1,5 +1,5 @@
 export const getСommentApi = () => {
-    return fetch("https://sandbox.creos.me/api/v1/comment/", {
+    return fetch("https://sandbox.creos.me/api/v1/comment/?ordering=-date_created", {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
