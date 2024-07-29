@@ -12,19 +12,34 @@ function App() {
 
   const changeLanguage = (language: string) => {
     i18n.changeLanguage(language);
+    localStorage.setItem("lang", language);
   };
 
   const [theme, setTheme] = useState("");
 
-  useEffect(() => {
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      setTheme("dark");
-      localStorage.setItem("theme", "dark");
-    } else if (window.matchMedia("(prefers-color-scheme: light)").matches) {
-      setTheme("light");
-      localStorage.setItem("theme", "light");
-    }
-  }, []);
+  useEffect(()=>{
+    const lang = localStorage.getItem('lang')
+    if (lang) {
+      i18n.changeLanguage(lang);
+    } else i18n.changeLanguage('ru')
+  }, [])
+
+  // useEffect(() => {
+  //   if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+  //     setTheme("dark");
+  //     localStorage.setItem("theme", "dark");
+  //   } else if (window.matchMedia("(prefers-color-scheme: light)").matches) {
+  //     setTheme("light");
+  //     localStorage.setItem("theme", "light");
+  //   }
+  // }, []);
+
+  useEffect (() => {
+    const checkTheme = localStorage.getItem('theme') ?? 'light'; setTheme(checkTheme); 
+    // if(checkTheme) {
+    //   setTheme(checkTheme);
+    // } else setTheme('light')
+  }, [])
 
   function toggleDaerkTheme() {
     setTheme("dark");
@@ -77,7 +92,6 @@ function App() {
         <NavLink to="/designerList/">{t("Header.designers_list_link")}</NavLink>
         <NavLink to="/issueList/">{t("Header.issues_link")}</NavLink>
       </div>
-      <hr />
       <hr />
       <Routes>
         <Route path="/" element={<HomePage />} />
